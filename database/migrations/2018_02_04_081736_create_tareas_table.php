@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMensajesTable extends Migration
+class CreateTareasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateMensajesTable extends Migration
      */
     public function up()
     {
-        Schema::create('mensajes', function (Blueprint $table) {
+        Schema::create('tareas', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('mensaje');
+            $table->text('tarea');
             $table->integer('id_user')->unsigned();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
@@ -29,6 +29,6 @@ class CreateMensajesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mensajes');
+        Schema::dropIfExists('tareas');
     }
 }
