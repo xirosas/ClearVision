@@ -18,4 +18,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/config', 'HomeController@config');
+Route::get('/config', 'HomeController@config')->name('config');
