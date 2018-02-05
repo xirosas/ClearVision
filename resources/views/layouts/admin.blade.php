@@ -159,8 +159,33 @@
         </div>
       </div>
     </div>
+    
     <!-- Javascript files-->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          estados();
+          sexos();
+          ocupaciones();
+        });
+        function estados(){
+            $.get("{{ URL::to('/estado/leerestados')}}",function(data){
+              $('#estadosInfo').empty().html(data);
+            });
+          }
+
+          function sexos(){
+            $.get("{{ URL::to('/sexo/leersexos')}}",function(data){
+              $('#sexosInfo').empty().html(data);
+            });
+          }
+          
+          function ocupaciones(){
+            $.get("{{ URL::to('/ocupacion/leerocupaciones')}}",function(data){
+              $('#ocupacionesInfo').empty().html(data);
+            });
+          }
+    </script>
     <script src="{{ asset('vendor/popper.js/umd/popper.min.js') }}"> </script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('vendor/jquery.cookie/jquery.cookie.js') }}"> </script>

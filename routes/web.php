@@ -19,3 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/config', 'HomeController@config')->name('config');
+
+Route::get('/estado/leerestados','AjaxController@estado')->name('estado');
+
+Route::get('/sexo/leersexos','AjaxController@sexo')->name('sexo');
+
+Route::get('/ocupacion/leerocupaciones','AjaxController@ocupacion')->name('ocupacion');
